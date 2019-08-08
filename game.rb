@@ -65,5 +65,9 @@ class Board
             [top_row, bottom_row, center_column].include? 1
         end 
 
+        def draw?
+            @move == 9
+        end
+
 end
 
