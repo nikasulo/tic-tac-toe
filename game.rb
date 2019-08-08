@@ -58,7 +58,12 @@ class Board
             [left_column, center_column, right_column].include? 1
         end
 
-        
+        def winning_row?
+            top_row = [@state[1], @state[2], @state[3]].uniq.length 
+            center_row = [@state[4], @state[5], @state[6]].uniq.length 
+            bottom_row = [@state[7], @state[8]], @state[9]].uniq.length 
+            [top_row, bottom_row, center_column].include? 1
+        end 
 
 end
 
