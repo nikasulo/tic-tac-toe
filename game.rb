@@ -39,5 +39,12 @@ class Board
         end
     end
 
+    private
+        def win?
+            winning_diagonal || winning_row || winning_column
+        end
+
+        
+
 end
 
