@@ -21,6 +21,8 @@ class Board
         p "#{@state[7]} | #{@state[8]} | #{@state[9]}"
     end
 
-
+    def is_move_valid?
+        @state[current_position].is_a? Integer
+    end
 end
 
