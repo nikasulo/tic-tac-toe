@@ -41,7 +41,13 @@ class Board
 
     private
         def win?
-            winning_diagonal || winning_row || winning_column
+            winning_diagonal? || winning_row? || winning_column?
+        end
+
+        def winning_diagonal
+            left_diagonal = [@state[1], @state[5], @state[9]].uniq.length
+            right_diagonal = [@state[3], @state[5], @state[7]].uniq.length
+            [left_diagonal, right_diagonal].include? 1
         end
 
         
