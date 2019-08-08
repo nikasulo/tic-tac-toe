@@ -50,6 +50,14 @@ class Board
             [left_diagonal, right_diagonal].include? 1
         end
 
+        def winning_column?
+            left_column = [@state[1], @state[4], @state[7]].uniq.length
+            right_column = [@state[3], @state[6], @state[9]].uniq.length
+            center_column = [@state[2], @state[5], @state[8]].uniq.length
+
+            [left_column, center_column, right_column].include? 1
+        end
+
         
 
 end
