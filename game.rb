@@ -21,8 +21,23 @@ class Board
         p "#{@state[7]} | #{@state[8]} | #{@state[9]}"
     end
 
-    def is_move_valid?
+    def is_move_valid? current_position
         @state[current_position].is_a? Integer
     end
+
+    def add_move(position,symbol)
+        @state[position] = symbol
+        is_move_valid? position
+        @move += 1
+
+        if win?
+            1
+        elsif draw?
+            -1
+        else 
+            0
+        end
+    end
+
 end
 
