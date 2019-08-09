@@ -10,22 +10,24 @@ class Player
 end
 
 class Board
+    attr_reader :state, :first_row, :second_row, :third_row
+
     def initialize
         @state = ['',1,2,3,4,5,6,7,8,9]
         @move = 0
     end
 
     def show_board
-        first_row = " #{@state[1]} | #{@state[2]} | #{@state[3]} "
-        second_row = " #{@state[4]} | #{@state[5]} | #{@state[6]} "
-        third_row = " #{@state[7]} | #{@state[8]} | #{@state[9]} "
-        breaker = "---|---|---"
+        @first_row = " #{@state[1]} | #{@state[2]} | #{@state[3]} "
+        @second_row = " #{@state[4]} | #{@state[5]} | #{@state[6]} "
+        @third_row = " #{@state[7]} | #{@state[8]} | #{@state[9]} "
+        @breaker = "---|---|---"
         
-        p first_row 
-        p breaker 
-        p second_row 
-        p breaker 
-        p third_row
+        p @first_row 
+        p @breaker 
+        p @second_row 
+        p @breaker 
+        p @third_row
         
     end
 

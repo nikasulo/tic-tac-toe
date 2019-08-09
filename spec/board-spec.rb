@@ -7,7 +7,8 @@ describe '::Board' do
   
   describe '#show_board' do
     it 'prints the board' do
-      expect(show_board).to eql(' 7 | 8 | 9 ')
+      board.show_board
+      expect(board.first_row).to eql(' 1 | 2 | 3 ')
     end
 =======
 describe '#show_board' do
@@ -25,6 +26,17 @@ describe '#show_board' do
 
     it 'rejects invalid moves' do
       expect(board.is_move_valid? 'a').to eql(false)
+    end
+  end
+
+  describe "#add_move" do 
+    it 'adds moves' do
+      expect(board.add_move(1, 'X')).to be 0
+    end
+    
+    it 'updates the state' do
+      board.add_move(1, 'X')
+      expect(board.state[1]).to eql("X")
     end
   end
 end 
