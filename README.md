@@ -1,11 +1,11 @@
-# OOP - Tic Tac Toe
+# Tic Tac Toe
 
-The aim of this project was to create a simple version of the game tic tac toe.
+This is a simple Tic Tac Toe game you can play in your terminal. It was made as a collaborative project in Ruby using OOP concepts
 
-**Used**
+**Language**
 - Ruby
 
 **Authors**
 
-### [- Eva Aleksandra Veskova Jackson](https://github.com/evaveskova/)
-### [- Tolulope Oluwadamilare Olusakin](https://github.com/Oluwadamilareolusakin)
+#### [- Eva Aleksandra Veskova Jackson](https://github.com/evaveskova/)
+#### [- Tolulope Oluwadamilare Olusakin](https://github.com/Oluwadamilareolusakin)
