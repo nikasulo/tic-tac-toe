@@ -14,4 +14,7 @@ describe '::Player' do
         expect(player_name).to eql('John')
     end
 
+    it 'has a symbol' do
+        expect(player.symbol).to eql('X')
+    end
 end
