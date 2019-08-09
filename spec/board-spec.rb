@@ -10,4 +10,14 @@ describe '::Board' do
     end
   end
 
+  describe "#is_move_valid?" do
+
+    it 'accepts valid moves' do
+      expect(board.is_move_valid? 1).to eql(true)
+    end
+
+    it 'rejects invalid moves' do
+      expect(board.is_move_valid? 'a').to eql(false)
+    end
+  end
 end 
