@@ -22,7 +22,7 @@ class Game
         @board.show_board
         p "It's #{@currentPlayer.name}'s turn to play"
         p "Enter a number from 1-9, careful not to enter a number that has been entered before"
-        position = gets.chomp.to_i
+        position = gets.to_i
         valid_move = true if @board.is_move_valid? position
       end
   
