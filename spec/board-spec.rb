@@ -48,5 +48,11 @@ describe '::Board' do
       board.add_move(1, 'X')
       expect(board.state[1]).to eql("X")
     end
+
+    it "doesn't update the state" do
+      initial_state = board.state
+      board.add_move('r', 'X')
+      expect(board.state).to eql(initial_state)
+    end
   end
 end 
