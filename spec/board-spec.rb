@@ -61,5 +61,10 @@ describe '::Board' do
       board.move = 9
       expect(board.draw?).to eql(true)
     end
+
+    it 'only signifies draws' do
+      board.move = 5
+      expect(board.draw?).to eql(false)
+    end
   end
 end 
