@@ -10,7 +10,8 @@ class Player
 end
 
 class Board
-    attr_reader :state, :first_row, :second_row, :third_row
+    attr_reader :state, :first_row, :second_row, :third_row 
+    attr_accessor :move
 
     def initialize
         @state = ['',1,2,3,4,5,6,7,8,9]

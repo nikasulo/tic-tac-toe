@@ -55,4 +55,11 @@ describe '::Board' do
       expect(board.state).to eql(initial_state)
     end
   end
+
+  describe "#draw?" do
+    it 'signifies a draw' do
+      board.move = 9
+      expect(board.draw).to eql(true)
+    end
+  end
 end 
