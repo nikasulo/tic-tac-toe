@@ -14,15 +14,21 @@ class Board
     end
 
     def show_board
-        p "#{@state[1]} | #{@state[2]} | #{@state[3]}"
-        p "---|---|---"
-        p "#{@state[4]} | #{@state[5]} | #{@state[6]}"
-        p "---|---|---"
-        p "#{@state[7]} | #{@state[8]} | #{@state[9]}"
+        first_row = " #{@state[1]} | #{@state[2]} | #{@state[3]} "
+        second_row = " #{@state[4]} | #{@state[5]} | #{@state[6]} "
+        third_row = " #{@state[7]} | #{@state[8]} | #{@state[9]} "
+        breaker = "---|---|---"
+        
+        p first_row 
+        p breaker 
+        p second_row 
+        p breaker 
+        p third_row
+        
     end
 
     def is_move_valid? current_position
-        @state[current_position].is_a?Integer and current_position.is_a?Integer and (1..9).include?(current_position) 
+        @state[current_position.to_i].is_a? Integer and (1..9).include?(current_position.to_i) ? true : false
     end
 
     def add_move(position,symbol)

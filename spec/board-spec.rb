@@ -1,13 +1,13 @@
-require '.lib/game.rb'
+require '../lib/game.rb'
 
-describe '#show_board' do
-  it 'prints the arrangment of the board' do
-    board = Board.center_rowoutput = board.show_board
-    expect (@state).to eql(Array(1..9))
-  end
-
-  it 'does not print the arrangement of the board' do
-    expect (@state).not_to eql(Array(1..9))
+describe '::Board' do
+  let(:board) {Board.new}
+  let(:show_board) {board.show_board}
+  
+  describe '#show_board' do
+    it 'prints the board' do
+      expect(show_board).to eql(' 7 | 8 | 9 ')
+    end
   end
 
 end 
