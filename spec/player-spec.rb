@@ -9,4 +9,9 @@ describe '::Player' do
         expect(player.nil?).to eql(false)
     end
 
+
+    it 'has a name' do
+        expect(player_name).to eql('John')
+    end
+
 end
