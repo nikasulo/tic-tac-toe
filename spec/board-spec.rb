@@ -59,7 +59,7 @@ describe '::Board' do
   describe "#draw?" do
     it 'signifies a draw' do
       board.move = 9
-      expect(board.draw).to eql(true)
+      expect(board.draw?).to eql(true)
     end
   end
 end 
