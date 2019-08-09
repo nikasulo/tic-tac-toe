@@ -36,6 +36,8 @@ class Board
     end
 
     def add_move(position,symbol)
+        return nil unless position.is_a?Integer
+
         @state[position] = symbol
         @move += 1
 

@@ -41,4 +41,5 @@ class Game
   end
 end
 
-# game = Game.new
+game = Game.new
+game.play
