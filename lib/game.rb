@@ -5,6 +5,8 @@ class Player
         @name = name
         @symbol = symbol
     end
+
+
 end
 
 class Board
