@@ -1,40 +1,46 @@
-class Main
+require_relative '../lib/game'
+
+
+class Game
   def initialize
-    @player1 = Player.new('X')
     puts 'Player 1, enter your name: '
-    @player1.name = gets.chomp
+    @player1 = Player.new(gets.chomp, 'X')
 
-    @player2 = Player.new('O')
     puts 'Player 2 enter your name: '
-    @player2.name = gets.chomp
-
-    puts '@player1.name you're up first, please choose a number on the board: '
-    new_move
+    @player2 = Player.new(gets.chomp,'O')
+    @board = Board.new
+    @game_over = false
   end
 
-def new_move
-  move = gets.chomps
-  @game.board(move)
-  result
-end
+  def play
+    until @game_over
+      @currentPlayer = @currentPlayer == @player1 ? @player2 : @player1
+      
+      valid_move = false
+  
+      until valid_move
+        @board.show_board
+        p "It's #{@currentPlayer.name}'s turn to play"
+        p "Enter a number from 1-9, careful not to enter a number that has been entered before"
+        position = gets.chomp.to_i
+        valid_move = true if @board.is_move_valid? position
+      end
+  
+      result = @board.add_move(position, @currentPlayer.symbol)
+  
+      if result == 1
+        p "#{@currentPlayer.name} wins"
+        @board.show_board
+        @game_over = true
+      elsif result == -1
+        p "It's a draw yo!"
+        @board.show_board
+        @game_over = true
 
-def result
-if result == false
-  new_move
-else puts '{ wins!}'
-  new_game
-end
-
-def new_game
-  puts 'Would you like to play a new game? Y/N?'
-  answer = gets.chomp.upcase
-
-  if answer == 'Y'
-    Main.new_game
-  else answer == 'N'
-    puts 'Thanks for playing!'
+      end
+    end
   end
 end
-end
 
-Main.new
+game = Game.new
+game.play
