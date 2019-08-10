@@ -5,27 +5,40 @@ class Player
         @name = name
         @symbol = symbol
     end
+
+
 end
 
 class Board
+    attr_reader :state, :first_row, :second_row, :third_row 
+    attr_accessor :move
+
     def initialize
         @state = ['',1,2,3,4,5,6,7,8,9]
         @move = 0
     end
 
     def show_board
-        p "#{@state[1]} | #{@state[2]} | #{@state[3]}"
-        p "---|---|---"
-        p "#{@state[4]} | #{@state[5]} | #{@state[6]}"
-        p "---|---|---"
-        p "#{@state[7]} | #{@state[8]} | #{@state[9]}"
+        @first_row = " #{@state[1]} | #{@state[2]} | #{@state[3]} "
+        @second_row = " #{@state[4]} | #{@state[5]} | #{@state[6]} "
+        @third_row = " #{@state[7]} | #{@state[8]} | #{@state[9]} "
+        @breaker = "---|---|---"
+        
+        p @first_row 
+        p @breaker 
+        p @second_row 
+        p @breaker 
+        p @third_row
+        
     end
 
     def is_move_valid? current_position
-        @state[current_position].is_a?Integer and current_position.is_a?Integer and (1..9).include?(current_position) 
+        @state[current_position.to_i].is_a? Integer and (1..9).include?(current_position.to_i) ? true : false
     end
 
     def add_move(position,symbol)
+        return nil unless position.is_a?Integer
+
         @state[position] = symbol
         @move += 1
 
@@ -38,7 +51,6 @@ class Board
         end
     end
 
-    private
         def win?
             winning_diagonal? || winning_row? || winning_column?
         end
@@ -75,3 +87,4 @@ class Board
         end
 
 end
+

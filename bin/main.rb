@@ -5,7 +5,6 @@ class Game
   def initialize
     puts 'Player 1, enter your name: '
     @player1 = Player.new(gets.chomp, 'X')
-
     puts 'Player 2 enter your name: '
     @player2 = Player.new(gets.chomp,'O')
     @board = Board.new
@@ -22,7 +21,7 @@ class Game
         @board.show_board
         p "It's #{@currentPlayer.name}'s turn to play"
         p "Enter a number from 1-9, careful not to enter a number that has been entered before"
-        position = gets.chomp.to_i
+        position = gets.to_i
         valid_move = true if @board.is_move_valid? position
       end
   
