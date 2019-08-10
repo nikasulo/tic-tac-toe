@@ -1,4 +1,4 @@
-require '../bin/main.rb'
+require_relative '../bin/main'
 
 describe "::Game" do
   let(:game) {Game.new}

@@ -1,28 +1,25 @@
-require '../lib/game.rb'
+require_relative '../lib/game'
 
 describe '::Board' do
   let(:board) {Board.new}
   let(:show_board) {board.show_board}
-  
-  
-  describe '#show_board' do
 
-    it 'prints the first row' do
-      show_board
-      expect(board.first_row).to eql(' 1 | 2 | 3 ')
-    end
-
-    it 'prints the second row' do
-      show_board
-      expect(board.second_row).to eql(' 4 | 5 | 6 ')
-    end
-
-    it 'prints third row' do
-      show_board
-      expect(board.third_row).to eql(' 7 | 8 | 9 ')
-    end
-    
+  it 'has first row' do
+    show_board
+    expect(board.first_row).to eql(' 1 | 2 | 3 ')
   end
+
+  it 'has a second row' do
+    show_board
+    expect(board.second_row).to eql(' 4 | 5 | 6 ')
+  end
+
+  it 'has a third row' do
+    show_board
+    expect(board.third_row).to eql(' 7 | 8 | 9 ')
+  end
+    
+  
 
   describe "#is_move_valid?" do
 
